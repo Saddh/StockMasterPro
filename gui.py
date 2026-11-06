@@ -28,9 +28,9 @@ class LoginWindow(ctk.CTk):
         senha = self.p.get()
         sucesso, nivel = self.auth.validar_login(user, senha)
         if sucesso:
-            self.withdraw() # Esconde a janela
+            self.withdraw()
             self.on_success(user, nivel)
-            self.after(100, self.destroy) # Destrói após abrir o app
+            self.after(100, self.destroy)
         else:
             messagebox.showerror("Erro", "Dados inválidos!")
 
@@ -66,7 +66,7 @@ class AppEstoque(ctk.CTk):
         self.main_frame.grid(row=0, column=1, padx=20, pady=20, sticky="nsew")
         
         self.carregar_dados()
-        self.agendar_atualizacao() # Inicia o timer de 5 segundos
+        self.agendar_atualizacao()
 
     def agendar_atualizacao(self):
         self.carregar_dados()
